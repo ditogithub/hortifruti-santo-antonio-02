@@ -199,33 +199,30 @@
  <header style="
   background: linear-gradient(90deg, #27ae60, #2ecc71);
   color: white;
-  border-radius: 12px;
-  padding: 10px 16px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-  margin-bottom: 18px;
+  border-radius: 8px;
+  padding: 4px 10px; /* 🔹 altura menor */
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  margin-bottom: 12px;
   display: flex;
   align-items: center;
   justify-content: space-between;
   flex-wrap: wrap;
   text-align: center;
 ">
-<!-- Campo de pesquisa com Carrinho à esquerda e Admin à direita, colado à esquerda -->
-<div id="searchContainer" style="width:100%; display:flex; justify-content:flex-start; align-items:center; margin-top:48px; padding:0; gap:16px;">
+  <!-- Campo de pesquisa com Admin à direita, colado à esquerda -->
+  <div id="searchContainer" style="width:100%; display:flex; justify-content:flex-start; align-items:center; margin-top:8px; padding:0; gap:10px;">
+    
+    <!-- Campo de pesquisa -->
+    <input type="text" id="searchInput" placeholder="🔍 Pesquisar..." 
+      style="flex:1; max-width:280px; padding:3px 6px; border-radius:4px; border:1px solid rgba(0,0,0,0.2); background:white; color:black; font-size:9px; height:20px;">
   
-
+    <!-- Botão Admin à direita -->
+    <a href="#" id="adminLink" 
+      style="color:#fff; font-weight:bold; background:rgba(0,0,0,0.25); padding:5px 10px; border-radius:4px; text-decoration:none; font-size:9px;">
+      Admin
+    </a>
   
-  <!-- Campo de pesquisa -->
-  <input type="text" id="searchInput" placeholder="🔍 Pesquisar..." 
-    style="flex:1; max-width:300px; padding:4px 8px; border-radius:4px; border:1px solid rgba(0,0,0,0.2); background:white; color:black; font-size:10px; height:24px;">
-
-  <!-- Botão Admin à direita -->
-  <a href="#" id="adminLink" 
-    style="color:#fff; font-weight:bold; background:rgba(0,0,0,0.25); padding:10px 16px; border-radius:6px; text-decoration:none; font-size:12px;">
-    Admin
-  </a>
-
-</div>
-
+  </div>
 </header>
 
 
@@ -296,6 +293,9 @@
 
 
   <!-- qrcode lib (para gerar imagem do QR) -->
+
+  <script src="https://www.gstatic.com/firebasejs/10.13.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.13.0/firebase-firestore-compat.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/qrcode/build/qrcode.min.js"></script>
   <!-- Firebase + Firestore via CDN (module) -->
   <script type="module">
@@ -1045,7 +1045,6 @@ window.continuarComprando = function() {
   if (btnIrCarrinho) btnIrCarrinho.style.display = 'inline-block';
 };
 
-
-  </script>
+</script>
 </body>
 </html>
